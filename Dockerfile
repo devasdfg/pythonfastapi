@@ -17,11 +17,9 @@ COPY requirements.txt .
 # install python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# copy source codes to the image
-COPY ./app .
 
-# expose the port 8000
-EXPOSE 8000
+# expose the port 5001
+EXPOSE 5001
 
 # run the command to start uvicorn
-CMD ["uvicorn", "main_fastapi:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]
+CMD ["uvicorn", "main_fastapi:app", "--host", "0.0.0.0", "--port", "5001"]
